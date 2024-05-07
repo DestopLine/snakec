@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "display.h"
 #include "termconfig.h"
 
 int main(void) {
 	init_terminal();
 	atexit(restore_terminal);
+
+	render_frame();
 
 	while (1) {
 		char c = '\0';
