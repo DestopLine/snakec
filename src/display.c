@@ -3,7 +3,7 @@
 #include "display.h"
 #include "params.h"
 
-void _render_edge_h() {
+static void render_edge_h() {
 	printf("%c", CORNER);
 	
 	for (size_t i = 0; i < DISPLAY_WIDTH; i++) {
@@ -13,7 +13,7 @@ void _render_edge_h() {
 	printf("%c", CORNER);
 }
 
-void _render_edge_v() {
+static void render_edge_v() {
 	printf("%c" ANSI_MOVE_CURSOR_DOWN("1") ANSI_MOVE_CURSOR_LEFT("1"), CORNER);
 	
 	for (size_t i = 0; i < DISPLAY_HEIGHT; i++) {
@@ -25,13 +25,13 @@ void _render_edge_v() {
 
 void render_frame() {
 	printf(ANSI_MOVE_CURSOR_HOME);
-	_render_edge_h();
+	render_edge_h();
 	printf(ANSI_MOVE_CURSOR_HOME);
-	_render_edge_v();
+	render_edge_v();
 	printf(ANSI_MOVE_CURSOR_LEFT("1"));
-	_render_edge_h();
+	render_edge_h();
 	printf(ANSI_MOVE_CURSOR_LEFT("1") ANSI_MOVE_CURSOR_UP("9999"));
-	_render_edge_v();
+	render_edge_v();
 	
 	fflush(stdout);
 }
