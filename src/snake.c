@@ -7,7 +7,7 @@ void snake_init(Snake *snake) {
 	snake->row = FRAME_HEIGHT / 2;
 	snake->col = FRAME_WIDTH / 2;
 	snake->dir = RIGHT;
-	snake->growth_points = 5;
+	snake->growth_points = STARTING_SCORE;
 	snakeq_init(&snake->queue);
 }
 

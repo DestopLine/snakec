@@ -91,7 +91,7 @@ void run_game() {
 		printf("Score: %zu", snakeq_length(&snake.queue));
 
 		fflush(stdout);
-		usleep(MSPT);
+		usleep(MSPT * 1000);
 	}
 
 	snakeq_free(&snake.queue);

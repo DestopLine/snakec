@@ -12,4 +12,5 @@
 #define SNAKE_HEAD '@'
 #define FRUIT '*'
 
-#define MSPT 100
+#define MSPT 50
+#define STARTING_SCORE 2
