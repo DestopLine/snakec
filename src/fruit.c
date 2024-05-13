@@ -5,8 +5,8 @@
 #include "params.h"
 
 void fruit_gen(struct Fruit *fruit) {
-	fruit->row = rand() % DISPLAY_HEIGHT + 1;
-	fruit->col = rand() % DISPLAY_WIDTH + 1;
+	fruit->row = rand() % DISPLAY_HEIGHT + 2;
+	fruit->col = rand() % DISPLAY_WIDTH + 2;
 	fruit->growth_points = 1;
 }
 

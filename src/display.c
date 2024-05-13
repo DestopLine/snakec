@@ -30,7 +30,7 @@ void render_frame() {
 	render_edge_v();
 	printf(ANSI_MOVE_CURSOR_LEFT("1"));
 	render_edge_h();
-	printf(ANSI_MOVE_CURSOR_LEFT("1") ANSI_MOVE_CURSOR_UP("9999"));
+	printf(ANSI_MOVE_CURSOR_LEFT("1") ANSI_MOVE_CURSOR_UP("%d"), DISPLAY_HEIGHT + 1);
 	render_edge_v();
 	
 	fflush(stdout);

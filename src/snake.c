@@ -83,8 +83,8 @@ bool snake_render(const Snake *snake, Direction del_dir) {
 	}
 
 	// Collision with wall
-	if ((snake->row == 0 || snake->row > DISPLAY_HEIGHT)
-		|| (snake->col == 0 || snake->col > DISPLAY_WIDTH)) {
+	if ((snake->row == 1 || snake->row >= FRAME_HEIGHT)
+		|| (snake->col == 1 || snake->col >= FRAME_WIDTH)) {
 		dead = true;
 	}
 

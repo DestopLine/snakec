@@ -89,6 +89,5 @@ void run_game() {
 		usleep(MSPT);
 	}
 
-	read(STDIN_FILENO, &c, 1);
 	snakeq_free(&snake.queue);
 }
