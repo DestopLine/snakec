@@ -18,17 +18,18 @@ void enable_raw_mode() {
 
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
 }
+
 void disable_raw_mode() {
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
 }
 
 void init_terminal() {
-	printf(ANSI_ENABLE_ALT_BUF);
+	printf(ANSI_ENABLE_ALT_BUF ANSI_HIDE_CURSOR);
 	fflush(stdout);  // This is needed to enter without needing to print newline
 	enable_raw_mode();
 }
 
 void restore_terminal() {
 	disable_raw_mode();
-	printf(ANSI_DISABLE_ALT_BUF);
+	printf(ANSI_DISABLE_ALT_BUF ANSI_SHOW_CURSOR);
 }
