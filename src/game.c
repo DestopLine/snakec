@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <unistd.h>
+#include "ansi.h"
 #include "fruit.h"
 #include "params.h"
 #include "snake.h"
@@ -83,8 +84,12 @@ void run_game() {
 			snake.growth_points += fruit.growth_points;
 			fruit_gen(&fruit);
 		}
+
 		fruit_render(&fruit);
 		dead = snake_render(&snake, del_dir);
+		printf(ANSI_MOVE_CURSOR("%zu", "1"), FRAME_HEIGHT + 1ul);
+		printf("Score: %zu", snakeq_length(&snake.queue));
+
 		fflush(stdout);
 		usleep(MSPT);
 	}
